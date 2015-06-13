@@ -1,0 +1,7 @@
+#!/bin/sh
+#for template in *.template; do
+#P=$(printf  template |cut -f1 -d'.')
+P=${PWD##*/}
+unifdef -t -B -DLIVE template > $P-9999.ebuild
+ebuild $P-9999.ebuild clean digest clean
+#done
